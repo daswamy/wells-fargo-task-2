@@ -22,11 +22,11 @@ public class PortfolioSecurity {
 
     @ManyToOne(optional = true)
     @JoinColumn(name = "created_by_advisor_id")
-    private FinancialAdvisor createdByAdvisor;
+    private Advisor createdByAdvisor;
 
     @ManyToOne(optional = true)
     @JoinColumn(name = "updated_by_advisor_id")
-    private FinancialAdvisor updatedByAdvisor;
+    private Advisor updatedByAdvisor;
 
     @Column(nullable = false)
     private LocalDate purchaseDate;
@@ -128,17 +128,17 @@ public class PortfolioSecurity {
         this.updatedAt = updatedAt;
     }
 
-    public FinancialAdvisor getCreatedByAdvisor() {
+    public Advisor getCreatedByAdvisor() {
         return createdByAdvisor;
     }
-    public void setCreatedByAdvisor(FinancialAdvisor createdByAdvisor) {
+    public void setCreatedByAdvisor(Advisor createdByAdvisor) {
         this.createdByAdvisor = createdByAdvisor;
     }
 
-    public FinancialAdvisor getUpdatedByAdvisor() {
+    public Advisor getUpdatedByAdvisor() {
         return updatedByAdvisor;
     }
-    public void setUpdatedByAdvisor(FinancialAdvisor updatedByAdvisor) {
+    public void setUpdatedByAdvisor(Advisor updatedByAdvisor) {
         this.updatedByAdvisor = updatedByAdvisor;
     }
 }
