@@ -7,7 +7,7 @@ public class Client{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long clientId;
+    private Long clientId;
 
     @Column(nullable = false)
     private String name;
@@ -26,14 +26,14 @@ public class Client{
 
     @ManyToOne(optional = false)
     @JoinColumn(name = "advisor_id", nullable = false)
-    private FinancialAdvisor advisor;
+    private Advisor advisor;
 
     @OneToOne(mappedBy = "client")
     private Portfolio portfolio;
 
     protected Client() {}
 
-    public Client(String name, String email, String phone, FinancialAdvisor advisor) {
+    public Client(String name, String email, String phone, Advisor advisor) {
         this.name = name;
         this.email = email;
         this.phone = phone;
@@ -83,10 +83,10 @@ public class Client{
         return updatedAt;
     }
 
-    public FinancialAdvisor getAdvisor() {
+    public Advisor getAdvisor() {
         return advisor;
     }
-    public void setAdvisor(FinancialAdvisor advisor) {
+    public void setAdvisor(Advisor advisor) {
         this.advisor = advisor;
     }
 

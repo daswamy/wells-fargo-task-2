@@ -1,7 +1,6 @@
 package com.wellsfargo.counselor.entity;
 
 import jakarta.persistence.*;
-import java.time.LocalDateTime;
 
 @Entity
 public class Portfolio {
